@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>G2 | 2026 PROMO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff7e5f;
+            --dark: #2d3436;
+            --bg: #fffcf9;
+            --success: #27ae60;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bg-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: move 10s infinite alternate ease-in-out;
+        }
+
+        .orb-1 { background: rgba(255, 126, 95, 0.2); top: -50px; left: -50px; }
+        .orb-2 { background: rgba(254, 180, 123, 0.2); bottom: -50px; right: -50px; animation-delay: -5s; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(50px, 100px) scale(1.2); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 30px;
+            border-radius: 50px;
+            box-shadow: 0 40px 100px rgba(255, 126, 95, 0.15);
+            text-align: center;
+            border: 2px solid white;
+            animation: pulse 3s infinite ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .promo-header {
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: -2px;
+            color: var(--dark);
+            text-transform: uppercase;
+            margin-bottom: 0;
+            line-height: 0.9;
+            animation: colorShift 4s infinite linear;
+        }
+
+        @keyframes colorShift {
+            0% { color: var(--dark); }
+            50% { color: var(--accent); }
+            100% { color: var(--dark); }
+        }
+
+        .year-tag {
+            background: var(--accent);
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            font-weight: 900;
+            transform: rotate(-3deg);
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .offer-box {
+            background: white;
+            border: 3px solid var(--accent);
+            border-radius: 30px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .offer-item {
+            padding: 15px 0;
+        }
+
+        .offer-label {
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .new-price {
+            color: var(--success);
+            font-weight: 900;
+            animation: bounce 0.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes bounce {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #eee, transparent);
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+
+<div class="container">
+    <div class="year-tag">2026</div>
+    <div class="promo-header">PROMO</div>
+    
+    <h1 class="logo">G2</h1>
+    
+    <div class="offer-box">
+        <div class="offer-item">
+            <span class="offer-label">BUY 1 (10% OFF)</span>
+            <div class="price-container">
+                <span class="old-price">Rp10k</span>
+                <span class="new-price">Rp9k ✅</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="offer-item">
+            <span class="offer-label">BUY 2 (26% OFF)</span>
+            <div class="price-container">
+                <span class="old-price">Rp20k</span>
+                <span class="new-price">Rp15k ✅</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
